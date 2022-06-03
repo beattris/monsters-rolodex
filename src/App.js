@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      name: 'Tris'
-    }
-  }
-  nameChangeHandler = () => {
-    this.setState ({
-      name: 'Ezinne'
-    })
+      monsters: [
+        { name: "Linda" },
+        { name: "Franky" },
+        { name: "Abigail" },
+      ]
+    };
   }
 
-  render(){
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Hi {this.state.name}</p>
-          <button onClick={this.nameChangeHandler.bind(this)}>change name </button>
-        </header>
-      </div>
-    );
+  render() {
+    return <div className="App">
+      {this.state.monsters.map((monster) => {
+        return <h1 key={Math.random()}>{monster.name}</h1>
+      })}
+    </div>;
   }
 }
 
