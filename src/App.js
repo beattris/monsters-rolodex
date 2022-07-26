@@ -1,21 +1,28 @@
-import { Component } from 'react';
-import './App.css';
+import { Component } from "react";
+import "./App.css";
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      name: 'Beatrice'
-    }
+      monster1: {
+        name: "Linda",
+      },
+      monster2: {
+        name: "Frank",
+      },
+      monster3: {
+        name: "Jacky",
+      },
+    };
   }
-  
-  render(){
+
+  render() {
     return (
       <div className="App">
-        <p>Hi, {this.state.name}</p>
-        <button onClick={() =>{
-          this.setState({name: 'Tris'})
-        }}>change name</button>
+        <h1>{this.state.monster1.name}</h1>
+        <h1>{this.state.monster2.name}</h1>
+        <h1>{this.state.monster3.name}</h1>
       </div>
     );
   }
