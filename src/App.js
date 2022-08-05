@@ -1,12 +1,13 @@
 import { Component } from "react";
 import "./App.css";
+import CardList from "./components/card-list/card-list.component";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       monsters: [],
-      searchField: '',
+      searchField: "",
     };
   }
 
@@ -29,13 +30,13 @@ class App extends Component {
   onSearchChange = (event) => {
     const searchField = event.target.value.toLocaleLowerCase();
     this.setState(() => {
-      return{ searchField }
-    })
-  }
+      return { searchField };
+    });
+  };
 
   render() {
-    const {monsters, searchField} = this.state;
-    const {onSearchChange} = this;
+    const { monsters, searchField } = this.state;
+    const { onSearchChange } = this;
 
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLocaleLowerCase().includes(searchField);
@@ -56,6 +57,7 @@ class App extends Component {
             </div>
           );
         })}
+        <CardList />
       </div>
     );
   }
